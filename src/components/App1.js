@@ -60,7 +60,7 @@ export default function App() {
   // send movie data to the backend
   function sendWatchedMovie(movie) {
     axios
-      .post("http://localhost:5000/api/movies", { movie })
+      .post("https://moviexpress.vercel.app/api/movies", { movie })
       .then((res) => console.log("Movie data sent successfully:", res.data))
       .catch((error) => {
         console.log("Error sending movie data: ", error);
@@ -74,7 +74,7 @@ export default function App() {
 
   function handleDeleteWatched(id) {
     axios
-      .delete(`http://localhost:5000/api/movies/${id}`)
+      .delete(`https://moviexpress.vercel.app/api/movies/${id}`)
       .then((res) => {
         console.log(res.data);
       })
@@ -126,7 +126,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/all-movies")
+      .get("https://moviexpress.vercel.app/api/all-movies")
       .then((res) => {
         setWatched(res.data);
       })
